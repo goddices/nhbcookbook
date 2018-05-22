@@ -5,11 +5,14 @@ using System.Linq.Expressions;
 
 namespace NHibernateCookbook.Framework
 {
-    public interface IRepository<TEntity>
-    {
+    public interface IRepository<TEntity, TID> where TEntity : IEntity<TID>
+    { 
         TEntity Save(TEntity entity);
+         
         bool Delete(TEntity entity);
-        TEntity GetById<TEntityId>(TEntityId id);
-        IEnumerable<TEntity> GetMany(Func<TEntity, bool> where);
+         
+        TEntity GetById(TID id);
+         
+        IEnumerable<TEntity> GetMany(Func<TEntity, bool> where); 
     }
 }

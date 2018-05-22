@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NHibernateCookbook.Framework.Entities
 {
-    public class Person : IEntity
+    public class Person : IEntity<int>
     {
         public virtual int Id { get; set; }
         public virtual String Name { get; set; }

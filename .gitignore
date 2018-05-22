@@ -4,3 +4,5 @@ obj
 *.pdb
 *vshost.*
 packages
+.vs
+*.csproj.user

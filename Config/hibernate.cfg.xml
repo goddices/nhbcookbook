@@ -5,11 +5,18 @@ xmlns="urn:nhibernate-configuration-2.2">
     <property name="proxyfactory.factory_class">
       NHibernate.Bytecode.DefaultProxyFactoryFactory,NHibernate
     </property>
-    <property name="connection.driver_class">NHibernate.Driver.SqlClientDriver</property>
+    <!--For SqlServer-->
+    <!--<property name="connection.driver_class">NHibernate.Driver.SqlClientDriver</property>
     <property name="connection.connection_string">
       Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog=NHB.Cookbook;Integrated Security=True
     </property>
-    <property name="dialect">NHibernate.Dialect.MsSql2008Dialect</property>
+    <property name="dialect">NHibernate.Dialect.MsSql2008Dialect</property>-->
+    <!--For MySql-->
+    <property name="connection.driver_class">NHibernate.Driver.MySqlDataDriver</property>
+    <property name="connection.connection_string">
+      Database=nhbcookbook;Data Source=localhost;User Id=root;Password=123456
+    </property>
+    <property name="dialect">NHibernate.Dialect.MySQLDialect</property>
     <property name="current_session_context_class">web</property>
     <mapping assembly="Framework"/>
   </session-factory> 

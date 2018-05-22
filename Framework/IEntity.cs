@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace NHibernateCookbook.Framework
 {
-    public interface IEntity 
+    public interface IEntity<TID>
     {
-        
+        TID Id { get; set; }
     }
 }
