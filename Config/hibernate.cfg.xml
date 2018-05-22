@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-configuration
+xmlns="urn:nhibernate-configuration-2.2">
+  <session-factory name="Default">
+    <property name="proxyfactory.factory_class">
+      NHibernate.Bytecode.DefaultProxyFactoryFactory,NHibernate
+    </property>
+    <property name="connection.driver_class">NHibernate.Driver.SqlClientDriver</property>
+    <property name="connection.connection_string">
+      Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog=NHB.Cookbook;Integrated Security=True
+    </property>
+    <property name="dialect">NHibernate.Dialect.MsSql2008Dialect</property>
+    <property name="current_session_context_class">web</property>
+    <mapping assembly="Framework"/>
+  </session-factory> 
+</hibernate-configuration>
